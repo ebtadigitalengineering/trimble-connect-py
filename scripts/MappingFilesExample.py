@@ -1,3 +1,7 @@
+'''
+File data is added to SQLITE db and models from one project are mapped to another - helpful in migration
+'''
+
 from TrimblePy.common.auth import Authentication
 from TrimblePy.connect.file_api import TrimbleFileApi
 from TrimblePy.connect.model_api import ModelApi

@@ -1,3 +1,7 @@
+'''
+Remove lines from a viewpoint in a Trimble Connect Topic
+'''
+
 from TrimblePy.common.auth import Authentication
 from TrimblePy.connect.file_api import TrimbleFileApi
 from TrimblePy.connect.model_api import ModelApi

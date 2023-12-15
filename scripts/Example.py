@@ -1,4 +1,6 @@
-
+'''
+A range of exmaples looking into retriving all model data and identifying those elements that are involved in Topics
+'''
 
 from TrimblePy.common.auth import Authentication
 from TrimblePy.connect.file_api import TrimbleFileApi
@@ -250,8 +252,6 @@ ents = [item for sublist in ents for item in sublist] # flatten list
 
 # topic components are stored without model name... search for them in the model entities
 inv_ents = [x for x in ents if x.entity_id in components_involved and x.model.name in [m.name for m in models]]
-
-# TODO : TEST topic_api.create_new_issue, topic_api.delete_issue
 
 
 # -----------------------------------------------------------------

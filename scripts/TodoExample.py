@@ -1,3 +1,7 @@
+'''
+Index the data relating to ToDos in a SQLITE db
+'''
+
 from TrimblePy.common.auth import Authentication
 from TrimblePy.connect.file_api import TrimbleFileApi
 from TrimblePy.connect.model_api import ModelApi

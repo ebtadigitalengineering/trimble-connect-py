@@ -2,6 +2,155 @@
 
 This example demonstrates how to interact with the Trimble Connect Model API using the `TrimblePy` Python package.
 
+<details>
+<summary># Project Structure</summary>
+
+<details>
+<summary># Authentication Module ('auth.py')</summary>
+
+### Class: Authentication
+- **Methods**
+  - set_base_url
+  - get_endpoint
+  - _save_token_env_data
+  - _load_token_env_data
+  - _save_token_to_env
+  - _load_token_from_env
+  - ensure_token
+  - get_token
+  - print_expiry_time
+  - get_stored_access_token
+  - get_stored_refresh_token
+  - _client_credentials_base64
+  - _get_authorization_code
+  - renew_tokens
+  - get_new_tokens_with_authorization_code
+  - get_sql_engine
+  - get_sql_tokens
+  - tokens_to_sql
+  - update_sql_tokens
+  - get_sql_table
+
+</details>
+
+<details>
+<summary># File API Module ('file_api.py')</summary>
+
+### Class: TrimbleFileApi
+- **Methods**
+  - get_projects
+  - get_file_snapshot
+  - build_index
+  - get_full_path
+  - get_files
+  - safe_request
+  - get_activities
+  - get_project_users
+  - add_tag
+  - get_tags
+  - get_tag
+  - get_tagged_objects
+  - delete_tags
+  - add_objects_to_tag
+  - get_clashsets
+  - get_clash_details
+  - delete_clash
+  - post_clashset
+  - list_all_clash_items
+  - get_todos
+  - get_todo_attachments
+  - get_2d_view
+### Class: TrimbleFile
+- **Methods**
+  - __repr__
+</details>
+
+<details>
+<summary># Model API Module ('model_api.py')</summary>
+
+### Class ModelApi: 
+- **Methods**
+  - get_model_layers
+  - get_model_entities
+  - get_pset_defs
+  - get_model_info
+  - build_df_models
+  - construct_model
+  - _construct_model_worker
+  - construct_models
+  - get_entity_data
+  - construct_entities
+  - entities_object
+  - entity_to_df
+  - entity_to_df_optimized
+  - process_entities_with_multiprocessing
+### Class: Entity
+- **Methods**
+  - __repr__
+### Class: Model
+- **Methods**
+  - add_entity
+  - __repr__
+</details>
+
+<details>
+<summary># Org API Module ('org_api.py')</summary>
+
+### Class: OrgApi
+- **Methods**
+  - get_discovery_trees
+  - get_discovery_tree
+  - get_nodes
+  - get_node
+
+</details>
+
+<details>
+<summary># Pset API Module ('pset_api.py')</summary>
+
+### Class: PsetApi
+- **Methods**
+  - get_lib_defs
+  - encoder
+  - frn_notation
+  - get_object_psets
+  - update_pset
+  - prop_set_table
+  - create_library
+  - create_pset
+  - update_pset_wrapper
+  - mp_helper
+
+</details>
+
+<details>
+<summary># Topics API Module ('topics_api.py')</summary>
+
+### Class: TopicApi
+- **Methods**
+  - get_topics
+  - construct_topics
+  - get_viewpoint
+  - construct_viewpoint
+  - _get_viewpoint_helper
+  - get_all_viewpoints
+  - construct_all_viewpoints
+  - construct_viewpoint_data
+  - create_new_issue
+  - delete_topic
+  - update_viewpoint
+### Class: Topic
+- **Methods**
+  - to_dict
+  - __repr__
+### Class: Viewpoint
+- **Methods**
+  - to_dict
+
+</details>
+</details>
+
+
 ## Installation
 
 Clone the repo 

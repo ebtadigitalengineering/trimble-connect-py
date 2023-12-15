@@ -1,3 +1,8 @@
+'''
+Volume data from Solibri, Trimble and modellers are compared and added to custom psets in Trimble Connect
+'''
+
+
 from TrimblePy.common.auth import Authentication
 from TrimblePy.connect.file_api import TrimbleFileApi
 from TrimblePy.org.org_api import OrgApi
