@@ -216,19 +216,13 @@ TRIMBLE_REFRESH_TOKEN=...   (optional)
 
 ## Examples - trimble-connect-py/scripts
 
-**basic.py** - simple example of setting up the authentication and retrieving the first project from your list of projects
-
-**Example.py** - comprehensive examples relating to the file api, model api, topic api, and pset api. This demonstrates how to create model and entity objects to work with in your code. Creation of a local data twin of the models and entities is also demonstrated. As well as this, the use of the topics api is demonstrated, showing how to combine the file api, model api and topics api to retrieve viewpoints and associated entities.
-
-**MappingFilesExample.py** - demonstrates a way to retrieve project files records from two separate projects in two separate regions and map the old modelIds to the new modelIds. This is useful if you have a project in, say, the US region and a project in the AP region and you want to map the modelIds from the US project to the AP project.
-
-**PsetExample.py** - as an example - geometry data is added to a Pset that compares varying geometry from Solibri, Trimble and Revit, and a flag is added to the Pset to indicate if the geometry is the same or not. This is a general geometry validation exercise. 
-
-**TodoExample.py** - demonstrates how to retrieve todo data from a project and create a Sqlite database of the todo data. 
-
-**TopicsExample.py** - update the viewpoint of a Topic to remove lines. 
-
-####Note - there is an example in the scripts/rough_examples folder that looks into writing custom psets with multiprocessing. While it will work, it is not pretty. 
+- **basic.py** - simple example of setting up the authentication and retrieving the first project from your list of projects
+- **Example.py** - comprehensive examples relating to the file api, model api, topic api, and pset api. This demonstrates how to create model and entity objects to work with in your code. Creation of a local data twin of the models and entities is also demonstrated. As well as this, the use of the topics api is demonstrated, showing how to combine the file api, model api and topics api to retrieve viewpoints and associated entities.
+- **MappingFilesExample.py** - demonstrates a way to retrieve project files records from two separate projects in two separate regions and map the old modelIds to the new modelIds. This is useful if you have a project in, say, the US region and a project in the AP region and you want to map the modelIds from the US project to the AP project.
+- **PsetExample.py** - as an example - geometry data is added to a Pset that compares varying geometry from Solibri, Trimble and Revit, and a flag is added to the Pset to indicate if the geometry is the same or not. This is a general geometry validation exercise. 
+- **TodoExample.py** - demonstrates how to retrieve todo data from a project and create a Sqlite database of the todo data. 
+- **TopicsExample.py** - update the viewpoint of a Topic to remove lines. 
+- ####Note - there is an example in the scripts/rough_examples folder that looks into writing custom psets with multiprocessing. While it will work, it is not pretty. 
 
 
 ## Authentication
