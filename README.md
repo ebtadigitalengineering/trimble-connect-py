@@ -2,8 +2,6 @@
 
 This example demonstrates how to interact with the Trimble Connect Model API using the `TrimblePy` Python package.
 
-<details>
-<summary>Project Structure</summary>
 
 <details>
 <summary>Authentication Module ('auth.py')</summary>
@@ -164,7 +162,7 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
   - to_dict
 
 </details>
-</details>
+
 
 ## Installation
 
