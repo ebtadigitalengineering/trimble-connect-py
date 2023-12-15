@@ -222,7 +222,7 @@ TRIMBLE_REFRESH_TOKEN=...   (optional)
 - **PsetExample.py** - as an example - geometry data is added to a Pset that compares varying geometry from Solibri, Trimble and Revit, and a flag is added to the Pset to indicate if the geometry is the same or not. This is a general geometry validation exercise. 
 - **TodoExample.py** - demonstrates how to retrieve todo data from a project and create a Sqlite database of the todo data. 
 - **TopicsExample.py** - update the viewpoint of a Topic to remove lines. 
-- ####Note - there is an example in the scripts/rough_examples folder that looks into writing custom psets with multiprocessing. While it will work, it is not pretty. 
+- *Note - there is an example in the scripts/rough_examples folder that looks into writing custom psets with multiprocessing. While it will work, it is not pretty.*
 
 
 ## Authentication
