@@ -22,11 +22,11 @@ org_api_endpoint = auth.endpoints['org']  # the base URL for the Trimble Connect
 
 # if it doesnt work - go through web to refresh everything
 # auth.get_new_tokens_with_authorization_code()
-file_api = TrimbleFileApi(authentication=auth,base_url=file_api_endpoint)
+file_api = TrimbleFileApi(authentication=auth)
 projects = file_api.get_projects()
 project_id = projects[0]["id"]
-org_api = OrgApi(authentication=auth, project_id=project_id, base_url=org_api_endpoint)
-pset_api = PsetApi(authentication=auth, project_id=project_id, base_url=pset_api_endpoint)
+org_api = OrgApi(authentication=auth, project_id=project_id)
+pset_api = PsetApi(authentication=auth, project_id=project_id)
 
 forestId = f"project:{project_id}:data" # frn notation for project data forest
 
@@ -90,7 +90,7 @@ def convert_to_float(x):
     except:
         return None
 
-vol[['NEL_Volume','TRIM_Volume','SOL_Volume']] = vol[['NEL_Volume','TRIM_Volume','SOL_Volume']].applymap(convert_to_float)
+vol[['NEL_Volume','TRIM_Volume','SOL_Volume']] = vol[['NEL_Volume','TRIM_Volume','SOL_Volume']].apply(convert_to_float)
 
 
 def calculate_vol_flag(row):
