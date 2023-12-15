@@ -3,26 +3,27 @@
 This example demonstrates how to interact with the Trimble Connect Model API using the `TrimblePy` Python package.
 
 <details>
-<summary># Project Structure</summary>
+<summary>Project Structure</summary>
 
 <details>
-<summary># Authentication Module ('auth.py')</summary>
+<summary>Authentication Module ('auth.py')</summary>
 
 ### Class: Authentication
+
 - **Methods**
   - set_base_url
   - get_endpoint
-  - _save_token_env_data
-  - _load_token_env_data
-  - _save_token_to_env
-  - _load_token_from_env
+  - \_save_token_env_data
+  - \_load_token_env_data
+  - \_save_token_to_env
+  - \_load_token_from_env
   - ensure_token
   - get_token
   - print_expiry_time
   - get_stored_access_token
   - get_stored_refresh_token
-  - _client_credentials_base64
-  - _get_authorization_code
+  - \_client_credentials_base64
+  - \_get_authorization_code
   - renew_tokens
   - get_new_tokens_with_authorization_code
   - get_sql_engine
@@ -34,9 +35,10 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
 </details>
 
 <details>
-<summary># File API Module ('file_api.py')</summary>
+<summary>File API Module ('file_api.py')</summary>
 
 ### Class: TrimbleFileApi
+
 - **Methods**
   - get_projects
   - get_file_snapshot
@@ -60,15 +62,18 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
   - get_todos
   - get_todo_attachments
   - get_2d_view
+
 ### Class: TrimbleFile
+
 - **Methods**
-  - __repr__
-</details>
+  - **repr**
+  </details>
 
 <details>
-<summary># Model API Module ('model_api.py')</summary>
+<summary>Model API Module ('model_api.py')</summary>
 
-### Class ModelApi: 
+### Class ModelApi:
+
 - **Methods**
   - get_model_layers
   - get_model_entities
@@ -76,7 +81,7 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
   - get_model_info
   - build_df_models
   - construct_model
-  - _construct_model_worker
+  - \_construct_model_worker
   - construct_models
   - get_entity_data
   - construct_entities
@@ -84,19 +89,24 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
   - entity_to_df
   - entity_to_df_optimized
   - process_entities_with_multiprocessing
+
 ### Class: Entity
+
 - **Methods**
-  - __repr__
+  - **repr**
+
 ### Class: Model
+
 - **Methods**
   - add_entity
-  - __repr__
-</details>
+  - **repr**
+  </details>
 
 <details>
-<summary># Org API Module ('org_api.py')</summary>
+<summary>Org API Module ('org_api.py')</summary>
 
 ### Class: OrgApi
+
 - **Methods**
   - get_discovery_trees
   - get_discovery_tree
@@ -106,9 +116,10 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
 </details>
 
 <details>
-<summary># Pset API Module ('pset_api.py')</summary>
+<summary>Pset API Module ('pset_api.py')</summary>
 
 ### Class: PsetApi
+
 - **Methods**
   - get_lib_defs
   - encoder
@@ -124,38 +135,42 @@ This example demonstrates how to interact with the Trimble Connect Model API usi
 </details>
 
 <details>
-<summary># Topics API Module ('topics_api.py')</summary>
+<summary>Topics API Module ('topics_api.py')</summary>
 
 ### Class: TopicApi
+
 - **Methods**
   - get_topics
   - construct_topics
   - get_viewpoint
   - construct_viewpoint
-  - _get_viewpoint_helper
+  - \_get_viewpoint_helper
   - get_all_viewpoints
   - construct_all_viewpoints
   - construct_viewpoint_data
   - create_new_issue
   - delete_topic
   - update_viewpoint
+
 ### Class: Topic
+
 - **Methods**
   - to_dict
-  - __repr__
+  - **repr**
+
 ### Class: Viewpoint
+
 - **Methods**
   - to_dict
 
 </details>
 </details>
-
 
 ## Installation
 
-Clone the repo 
+Clone the repo
 
-I've found it easiest to append the path to any files you want to run. 
+I've found it easiest to append the path to any files you want to run.
 
 ```python
 
@@ -168,7 +183,7 @@ from TrimblePy.connect.file_api import TrimbleFileApi
 
 region = 'ap'
 
-auth = Authentication(sql_available=True, token_retrieval_method='env',region=region) 
+auth = Authentication(sql_available=True, token_retrieval_method='env',region=region)
 access_token, refresh_token = auth.get_token()
 
 print(access_token)
@@ -211,15 +226,14 @@ Create an `Authentication` object to handle the token retrieval and storage. You
 from TrimblePy.common.auth import Authentication
 auth = Authentication(sql_available=False, token_retrieval_method='env', region='ap')
 # tokens store in .env file provide more security than storing in a temporary folder
-access_token, refresh_token = auth.get_token() 
+access_token, refresh_token = auth.get_token()
 ```
-
 
 #### SQL Auth Method
 
 ```python
 # Store tokens in secure SQL server
-auth = Authentication(sql_available=True, token_retrieval_method='sql', region='us') 
+auth = Authentication(sql_available=True, token_retrieval_method='sql', region='us')
 access_token, refresh_token = auth.get_token()
 ```
 
@@ -227,7 +241,7 @@ access_token, refresh_token = auth.get_token()
 
 ```python
 # Don't store tokens at all and initiate web request then refresh throughout session
-auth = Authentication(sql_available=True, token_retrieval_method='web') 
+auth = Authentication(sql_available=True, token_retrieval_method='web')
 access_token, refresh_token = auth.get_token()
 # If your redirect_uri is localhost, copy and paste the url into the console to continue
 >>> Opening browser for authentication. Please wait for the redirect URL.
@@ -299,6 +313,7 @@ users_df.columns = ['user_id', 'tiduuid', 'user_email', 'user_role', 'last_acces
 ## Working with Tags
 
 The following options are available with tags:
+
 - add_tag
 - get_tags - all tags
 - get_tag - specific tag
@@ -323,7 +338,6 @@ tag = "TagId"
 delete_tag = file_api.delete_tags(tag)
 ```
 
-
 ## Working with Models
 
 Use the `ModelApi` to retrieve model information and create a DataFrame of model data. Construct models to access their entities.
@@ -340,7 +354,7 @@ except Exception as e:
     print(f"An error occurred: {e}")
 ```
 
-You can easily fetch all the data for the project. 
+You can easily fetch all the data for the project.
 
 ```python
 from TrimblePy.connect.file_api import TrimbleFileApi
@@ -436,6 +450,7 @@ list_all_clash_items = file_api.list_all_clash_items(clashes[0]['id'])
 new_clash = file_api.post_clashset(name="Test Clashset", tolerance=10, models=['ModelId-0', 'ModelId-1'], ignoreSameDiscipline=False, type_of_clash="CLEARANCE")
 
 ```
+
 ## Working with ToDos
 
 See scripts/TodoExample.py
