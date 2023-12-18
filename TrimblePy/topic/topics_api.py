@@ -9,7 +9,7 @@ class TopicApi:
     def __init__(self, authentication,project_id):
         self.authentication = authentication
         self.headers = {
-            "Authorization": f"Bearer {self.authentication.get_stored_access_token()}"
+            "Authorization": f"Bearer {self.authentication.access_token}"
         }
         self.BASE_URL = self.authentication.endpoints['topic']
         self.project_id = project_id

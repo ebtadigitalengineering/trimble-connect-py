@@ -15,7 +15,7 @@ class TrimbleFileApi:
             self.authentication = authentication
             self.BASE_URL = self.authentication.endpoints['tc']
             self.headers = {
-                "Authorization": f"Bearer {self.authentication.get_stored_access_token()}",
+                "Authorization": f"Bearer {self.authentication.access_token}",
                 "Accept": "application/json"
             }
             self.project_id = project_id
@@ -223,7 +223,7 @@ class TrimbleFileApi:
         '''
         headers = {
             'accept': '*/*',
-            'Authorization' : f'Bearer {self.authentication.get_stored_access_token()}',
+            'Authorization' : f'Bearer {self.authentication.access_token}',
         }
         url = f'{self.BASE_URL}clashsets/{clashsetId}'
         response = requests.delete(url, headers=headers)

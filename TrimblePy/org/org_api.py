@@ -7,7 +7,7 @@ class OrgApi:
     def __init__(self, authentication, project_id=None):
         self.authentication = authentication
         self.headers = {
-            "Authorization": f"Bearer {self.authentication.get_stored_access_token()}",
+            "Authorization": f"Bearer {self.authentication.access_token}",
             "Content-Type": "application/json",
             "Accept": "application/json",
         }

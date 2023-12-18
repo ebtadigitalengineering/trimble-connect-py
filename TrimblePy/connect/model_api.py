@@ -12,7 +12,7 @@ class ModelApi:
     def __init__(self, authentication):
         self.authentication = authentication
         self.headers = {
-            "Authorization": f"Bearer {self.authentication.get_stored_access_token()}"
+            "Authorization": f"Bearer {self.authentication.access_token}",
         }
         self.BASE_URL = self.authentication.endpoints['model']
 
@@ -32,7 +32,7 @@ class ModelApi:
         return response.json()
 
     def get_model_info(self, versionId):
-        token = self.authentication.get_stored_access_token()
+        token = self.authentication.access_token
         if not token:
             raise ValueError("No access token available.")
         url = f"{self.BASE_URL}models/{versionId}?include=metadata"
