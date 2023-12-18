@@ -10,8 +10,8 @@ from TrimblePy.topic.topics_api import TopicApi
 import pandas as pd
 
 
-auth = Authentication(sql_available=True,token_retrieval_method='env') # choose sql_available=True if you want to use ms sql server to store and retrieve tokens
-auth.get_new_tokens_with_authorization_code()
+auth = Authentication(sql_available=True,token_retrieval_method='env',region='ap') # choose sql_available=True if you want to use ms sql server to store and retrieve tokens
+# auth.get_new_tokens_with_authorization_code()
 # make sure there are tokens available
 access_token, refresh_token = auth.get_token()
 
