@@ -11,7 +11,7 @@ class TopicApi:
         self.headers = {
             "Authorization": f"Bearer {self.authentication.access_token}"
         }
-        self.BASE_URL = self.authentication.endpoints['topic']
+        self.BASE_URL = self.authentication.endpoints['topic'] + "bcf/2.1/"
         self.project_id = project_id
 
     def get_topics(self):
